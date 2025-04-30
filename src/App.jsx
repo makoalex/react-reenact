@@ -1,13 +1,25 @@
-import { useState } from 'react'
+import { useState } from "react";
 
-import './App.css'
+import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-<h1>Tic Tac Toe</h1>
-  )
+    <main>
+      <div id="game-container">
+        <ol id="players">
+          <li>
+            <span className="player-name">Player I</span>
+            <span className="player-info">X</span>
+          </li>
+          <li>
+            <span className="player-name">Player II</span>
+            <span className="player-info">0</span>
+          </li>
+        </ol>
+        Game Board
+      </div>
+    </main>
+  );
 }
 
-export default App
+export default App;
