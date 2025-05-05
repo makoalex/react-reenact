@@ -8,7 +8,6 @@ export default function Player({ name, info, ...props }) {
     setIsEditing(true);
   };
   let playerName = <span className="player-name">{name}</span>;
-  
   if (isEditing) {
     playerName = (
       <input className="name-field" type="text" placeholder="Enter new name" />
@@ -23,7 +22,7 @@ export default function Player({ name, info, ...props }) {
       </span>
 
       <Button onSelect={handleEditClick} className="edit-button">
-        Edit
+        {isEditing ? 'Save': 'Edit'}
       </Button>
     </li>
   );
