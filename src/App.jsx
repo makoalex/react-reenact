@@ -1,20 +1,17 @@
 import { useState } from "react";
 
 import "./App.css";
+import Player from "./assets/components/Player";
 
 function App() {
   return (
     <main>
       <div id="game-container">
         <ol id="players">
-          <li>
-            <span className="player-name">Player I</span>
-            <span className="player-info">X</span>
-          </li>
-          <li>
-            <span className="player-name">Player II</span>
-            <span className="player-info">0</span>
-          </li>
+      <Player className= 'player' name="Player I" info="X" />
+      <Player className= 'player' name="Player I" info="0" />
+
+       
         </ol>
         Game Board
       </div>

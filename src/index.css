@@ -19,12 +19,10 @@ html {
 }
 
 body {
-  background: radial-gradient(
-      circle at top,
+  background: radial-gradient(circle at top,
       #2d2b3f,
-      #383937)
-      ,
-    url('bg-pattern.png') ;
+      #383937),
+    url('bg-pattern.png');
   background-repeat: repeat;
   background-size: 100% 100%, 30% 30%, 100% 100%;
   min-height: 110rem;
@@ -53,7 +51,8 @@ h1 {
   margin: 3rem auto;
   padding: 2rem;
   border-radius: 6px;
-  background:#27E28B;
+  background: rgb(96, 9, 240);
+  background: linear-gradient(0deg, rgba(96, 9, 240, 1) 0%, rgba(129, 5, 240, 1) 100%);
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
   position: relative;
 }
@@ -61,8 +60,7 @@ h1 {
 #players {
   list-style: none;
   padding: 0;
-    color: #2d2b3f;
-
+  color: #fff;
   margin: 1rem 0;
   display: flex;
   justify-content: center;
@@ -87,36 +85,21 @@ h1 {
   color: #f6e35a;
 }
 
-#players button {
-  width: 3rem;
-  border: none;
-  background: none;
-  color: #c3ba78;
-  font-size: 0.9rem;
-  cursor: pointer;
-  transition: color 0.2s;
-  padding: 0.5rem 0.25rem 0.25rem 0.25rem;
-  text-align: center;
-}
-
-#players button:hover {
-  color: #f8ca31;
-}
 
 .player {
+  font-family: 'Nunito Sans';
   border: 2px solid transparent;
+  color: #fff;
   padding: 0.5rem;
   border-radius: 4px;
   font-weight: bold;
 }
 
 .player-name {
-  font-family: 'Nunito Sans';
   font-weight: bolder;
   display: inline-block;
   width: 10rem;
   font-size: 1rem;
-  color: #2d2b3f;
   text-transform: uppercase;
   margin: 0;
   padding: 0.5rem;
@@ -125,3 +108,60 @@ h1 {
   text-align: center;
 }
 
+.edit-button {
+  font-family: 'Nunito Sans';
+  width: 3.2rem;
+  height: 2rem;
+  border: none;
+  background: none;
+  color: #fff;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all .2s ease-in;
+  padding: 0.5rem 0.25rem 0.25rem 0.25rem;
+  text-align: center;
+  outline: none;
+}
+
+.name-field {
+  font-family: 'Roboto Sans';
+  letter-spacing: 1px;
+  width: 10rem;
+  border: #370368;
+  background-color: rgba(129, 5, 240, 1);
+  text-transform: uppercase;
+  height: 2rem;
+  font-size: 11px;
+  color: #fff;
+}
+
+
+.name-field::placeholder {
+  font-weight: bold;
+  opacity: 0.5;
+  color: rgb(232, 240, 12);
+  transform: translateX(1rem);
+}
+.name-field:focus{
+  outline: none;
+  border: rgb(232, 240, 12) ;
+  box-shadow: 0 0 8px rgba(211, 234, 6, 0.4);
+}
+.player-symbol {
+  font-family: 'Caprasimo', cursive;
+  margin-left: 1rem;
+  font-size: 1rem;
+  color: #e1dec7;
+}
+
+#players .edit-button:hover {
+  color: #f6e35a;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+}
+
+#players .edit-button:active {
+  box-shadow:
+    inset 0px 4px 4px -3px #3d0473,
+    inset 0px -4px 4px -3px #3a026f,
+    inset 0px 0px 24px -3px #370368;
+}
