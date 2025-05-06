@@ -2,21 +2,40 @@ import React from "react";
 import Button from "./Button";
 import { useState } from "react";
 
-export default function Player({ name, info, ...props }) {
+export default function Player({ initialName, info, ...props }) {
+  const [playerName, setPlayerName] = useState(initialName);
   const [isEditing, setIsEditing] = useState(false);
-  const handleEditClick = () => {
-    setIsEditing((isEditing) => !isEditing);
 
+  const handleEditClick = () => {
+    if (isEditing && playerName.trim() === "") {
+      alert("Cannot be empty");
+      return;
+    }
+    setIsEditing((editing) => !editing);
   };
-  let playerName = <span className="player-name">{name}</span>;
+
+  const handleChange = (e) => {
+    setPlayerName(e.target.value);
+  };
+
+  const validateInput = () => {
+    const x = document.forms["myInput"].value;
+    if (x === "") {
+      alert("fill it out");
+    }
+    return false;
+  };
+  let editablePlayerName = <span className="player-name">{playerName}</span>;
   if (isEditing) {
-    playerName = (
+    editablePlayerName = (
       <input
         className="name-field"
         type="text"
         placeholder="Enter new name"
         required
-        value={name}
+        value={playerName}
+        name="myInput"
+        onChange={handleChange}
       />
     );
   }
@@ -24,7 +43,7 @@ export default function Player({ name, info, ...props }) {
   return (
     <li>
       <span {...props}>
-        {playerName}
+        {editablePlayerName}
         <span className="player-symbol">{info}</span>
       </span>
 
