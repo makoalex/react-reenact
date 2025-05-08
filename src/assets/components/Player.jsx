@@ -18,13 +18,7 @@ export default function Player({ initialName, info, ...props }) {
     setPlayerName(e.target.value);
   };
 
-  const validateInput = () => {
-    const x = document.forms["myInput"].value;
-    if (x === "") {
-      alert("fill it out");
-    }
-    return false;
-  };
+
   let editablePlayerName = <span className="player-name">{playerName}</span>;
   if (isEditing) {
     editablePlayerName = (
